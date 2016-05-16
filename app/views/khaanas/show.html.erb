@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <h1><%= @khaana.title %></h1>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @khaana.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @khaana.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_khaana_path(@khaana), class: "btn btn-default" %> |
+<%= link_to 'Back', khaanas_path %> |
+<%= link_to 'destroy', method: :destroy, data: {confirm: 'are you sure?'} %>
