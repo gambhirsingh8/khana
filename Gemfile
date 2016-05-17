@@ -4,6 +4,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'paperclip'
 gem 'sqlite3'
 gem 'cocaine'
+gem 'image_magick'
 
 gem 'cocaine'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
