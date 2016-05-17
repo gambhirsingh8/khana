@@ -75,7 +75,7 @@ class KhaanasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def khaana_params
-      params.require(:khaana).permit(:title, :description, :user_id)
+      params.require(:khaana).permit(:title, :description, :user_id, :image)
     end
 	def find_khaana
 @khaana = Khaana.find(params[:id])

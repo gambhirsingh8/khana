@@ -20,6 +20,7 @@
         <td><%= khaana.title %></td>
         <td><%= khaana.description %></td>
         <td><%= khaana.user_id %></td>
+		<td><%= image_tag khaana.image.url(:thumb) %></td>
         <td><%= link_to 'Show', khaana %></td>
         <td><%= link_to 'Edit', edit_khaana_path(khaana) %></td>
         <td><%= link_to 'Destroy', khaana, data: 'Are you sure?', method: :delete %></td>
