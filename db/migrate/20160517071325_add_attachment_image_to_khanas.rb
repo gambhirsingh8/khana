@@ -1,11 +1,11 @@
 class AddAttachmentImageToKhanas < ActiveRecord::Migration
-  def self.up
-    change_table :khanas do |t|
+  def up
+    change_table :khaanas do |t|
       t.attachment :image
     end
   end
 
-  def self.down
-    remove_attachment :khanas, :image
+  def down
+    remove_attachment :khaanas, :image
   end
 end
