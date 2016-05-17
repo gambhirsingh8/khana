@@ -1,5 +1,5 @@
 <%= form_for(@khaana) do |f| %>
-  <% if @khaana.errors.any? %>
+ <% if @khaana.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@khaana.errors.count, "error") %> prohibited this khaana from being saved:</h2>
 
@@ -7,7 +7,7 @@
       <% @khaana.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+      </ul> 
     </div>
   <% end %>
 
@@ -27,4 +27,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

@@ -1,10 +1,10 @@
 class KhaanasController < ApplicationController
-  before_action :find_khaana, only: [:show, :edit, :update, :destroy]
+  before_action :set_khaana, only: [:show, :edit, :update, :destroy]
 
   # GET /khaanas
   # GET /khaanas.json
   def index
-    @khaanas = Khaana.all.order("created_at DESC")
+    @khaana = Khaana.all.order("created_at DESC")
   end
   
 
@@ -22,6 +22,7 @@ class KhaanasController < ApplicationController
   
   # GET /khaanas/1/edit
   def edit
+  @khaana = Khaana.find(params[:id])
   end
 
   # POST /khaanas
@@ -56,18 +57,20 @@ class KhaanasController < ApplicationController
 
   # DELETE /khaanas/1
   # DELETE /khaanas/1.json
-  def destroy
+ def destroy
+    @khaana = Khaana.find(params[:id])
     @khaana.destroy
+
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Khaana was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to khaanas_url }
+      format.json { head :ok }
     end
   end
   
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_khaana
-      @khaanas = Khaana.find(params[:id])
+      @khaana = Khaana.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -75,7 +78,7 @@ class KhaanasController < ApplicationController
       params.require(:khaana).permit(:title, :description, :user_id)
     end
 	def find_khaana
-@khaanas = khaana.find(params[:id])
+@khaana = Khaana.find(params[:id])
 end
 
 end

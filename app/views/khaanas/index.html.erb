@@ -15,14 +15,14 @@
   </thead>
 
   <tbody>
-    <% @khaanas.each do |khaana| %>
+    <% @khaana.each do |khaana| %>
       <tr>
         <td><%= khaana.title %></td>
         <td><%= khaana.description %></td>
         <td><%= khaana.user_id %></td>
         <td><%= link_to 'Show', khaana %></td>
         <td><%= link_to 'Edit', edit_khaana_path(khaana) %></td>
-        <td><%= link_to 'Destroy', khaana, method: :destroy, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', khaana, data: 'Are you sure?', method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
